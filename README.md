@@ -17,9 +17,15 @@ npm install -g fis-parser-babeljs
 - in fis3
 
 
+    ```js
+	fis3.match('js/**.js', {
+        parser: fis.plugin('babeljs')
+    })
+	```
+
 	```js
 	fis3.match('js/**.js', {
-        parser: fis.plugin('babel-lk',{
+        parser: fis.plugin('babeljs',{
           "presets": ["es2015", "react", "stage-0"]
       })
     })
