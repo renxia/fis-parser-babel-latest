@@ -10,6 +10,11 @@ const presets = {
 
 module.exports = function (content, file, settings) {
 
+    // 添加 useBabel 配置项，如果 useBabel 为 false 则不进行编译
+    if (file.isES6 === false) {
+        return content;
+    }
+
     settings = Object.assign({
         presets: [
             'es2015',
