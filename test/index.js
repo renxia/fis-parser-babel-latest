@@ -28,6 +28,6 @@ var code = `class SinglePost {
 }`;
 
 console.log(code);
-console.log(run(code, null, {
+console.log(run(code, {}, {
     "presets": ["es2015", "react", "stage-0"]
 }));
