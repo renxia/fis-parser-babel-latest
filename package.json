@@ -1,6 +1,6 @@
 {
   "name": "fis-parser-babeljs",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A　Plugin to translate es6 to es5 based on babel in fis.",
   "main": "index.js",
   "scripts": {

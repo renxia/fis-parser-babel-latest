@@ -31,24 +31,15 @@ module.exports = function (content, file, settings) {
         });
     }
 
-    // 默认不加载.babelrc，避免错误的加载了全局配置而非编译工具中指定的配置
-    if (settings.breakConfig === undefined) {
-        settings.breakConfig = true;
-    }
-
     if (Array.isArray(settings.presets)) {
         for (var i = 0; i < settings.presets.length; i++) {
             settings.presets[i] = presets[settings.presets[i]];
         }
     }
 
-    // 出于安全考虑，不使用原始路径
-    settings.filename = file.subpath;
-
-
     var result = babel.transform(content, settings);
 
-    // 添加resourcemap输出
+    //// 添加resourcemap输出
     if (result.map) {
         var mapping = fis.file.wrap(file.dirname + '/' + file.filename + file.rExt + '.map');
         mapping.setContent(JSON.stringify(result.map, null, 4));
