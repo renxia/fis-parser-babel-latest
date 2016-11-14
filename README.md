@@ -1,41 +1,45 @@
-fis-parser-babeljs
+fis-parser-babel-latest
 =====================
 
-
-A　Plugin to translate es6 to es5 based on babel in fis.
-
-
+A　Plugin to translate es2015/es2016/es2017 to es5 based on babel in fis.
 
 ### INSTALL
 
 ```bash
-npm install -g fis-parser-babeljs
+npm install -g fis-parser-babel-latest
 ```
 
 ### USE
 
 - in fis3
 
-
     ```js
 	fis3.match('js/**.js', {
-        parser: fis.plugin('babeljs')
+        parser: fis.plugin('babel-latest')
     })
 	```
 
 	```js
 	fis3.match('js/**.js', {
-        parser: fis.plugin('babeljs',{
-          "presets": ["es2015", "react", "stage-0"]
-      })
+        parser: fis.plugin('babel-latest', {
+            "presets": [
+                ["latest", {
+                    "es2015": {
+                        "loose": true
+                    }
+                }],
+                "react",
+                "stage-0"
+            ]
+        })
     })
 	```
 
 - in fis
 
 	```js
-	fis.config.set('modules.parser.js', 'babeljs');
-	fis.config.set('settings.parser.babeljs', {
+	fis.config.set('modules.parser.js', 'babel-latest');
+	fis.config.set('settings.parser.babel-latest', {
 		// options
 	});
 
@@ -50,3 +54,5 @@ npm install -g fis-parser-babeljs
 		}
 	].concat(fis.config.get('roadmap.path', []));
 	```
+
+更多配置项参考：[http://babeljs.io/docs/usage/options/](http://babeljs.io/docs/usage/options/)
