@@ -1,6 +1,6 @@
 const babel = require('babel-core');
 const presets = {
-    'latest': require('babel-preset-latest'),
+    'env': require('babel-preset-env'),
     'es2015': require('babel-preset-es2015'),
     'react': require('babel-preset-react'),
     'stage-0': require('babel-preset-stage-0'),
@@ -17,10 +17,8 @@ module.exports = function (content, file, settings) {
 
     settings = Object.assign({
         presets: [
-            ["latest", {
-                "es2015": {
-                    "loose": false
-                }
+            ["env", {
+                "loose": false
             }],
             "react",
             "stage-0"

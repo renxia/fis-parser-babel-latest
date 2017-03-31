@@ -1,7 +1,7 @@
 fis-parser-babel-latest
 =====================
 
-A　Plugin to translate es2015/es2016/es2017 to es5 based on babel in fis.
+A　Plugin to translate es2015/es2016/es2017 to es5 based on babel in fis/fis3.
 
 ### INSTALL
 
@@ -23,10 +23,8 @@ npm install -g fis-parser-babel-latest
 	fis3.match('js/**.js', {
         parser: fis.plugin('babel-latest', {
             "presets": [
-                ["latest", {
-                    "es2015": {
-                        "loose": true
-                    }
+                ["env", {
+                    "loose": true
                 }],
                 "react",
                 "stage-0"
