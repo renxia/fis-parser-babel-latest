@@ -1,7 +1,7 @@
 const babel = require('babel-core');
 const presets = {
     'env': require('babel-preset-env'),
-    'es2015': require('babel-preset-es2015'),
+    // 'es2015': require('babel-preset-es2015'),
     'react': require('babel-preset-react'),
     'stage-0': require('babel-preset-stage-0'),
     'stage-1': require('babel-preset-stage-1'),
