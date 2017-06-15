@@ -18,7 +18,11 @@ module.exports = function (content, file, settings) {
     settings = Object.assign({
         presets: [
             ["env", {
-                "loose": false
+                "loose": false,
+                "targets": {
+                    "chrome": 42,
+                    "browsers": ["last 2 versions", "safari > 7"]
+                }
             }],
             "react",
             "stage-0"
